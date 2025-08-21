@@ -25,7 +25,7 @@ Um jogo de **Pet Virtual** criado com HTML, CSS e JavaScript. O jogador pode int
 
 1. Abra o `index.html` em qualquer navegador moderno. <br>
 Ou Abra pelo link: https://vitorespinosa.github.io/projeto-meu-pet-virtual/
-2. Digite o nome do seu pet.
+2. Digite o nome do seu pet(opcional).
 3. Use os botões de ação para cuidar dele:
    - **Alimentar** → Aumenta a fome.
    - **Brincar** → Aumenta a felicidade.
