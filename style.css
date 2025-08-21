@@ -1,0 +1,282 @@
+/* Estilização geral do body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-size: cover;      
+    background-position: center;  
+    transition: background-image 1s ease-in-out; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Container principal do jogo */
+.game-container {
+    background-color: #f3e2d8; 
+    border-radius: 15px;       
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+    padding: 35px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;             
+    border: 5px solid #663600; 
+}
+
+/* Títulos principais */
+h1 {
+    color: #0288d1;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    color: #424242;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #e0e0e0; 
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+/* Input para nome do pet */
+input {
+    font-family: gill sans;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+/* Área de exibição do pet */
+.pet-display-area {
+    margin-bottom: 20px;
+}
+
+/* Imagem do pet */
+#pet-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;       
+    border: 5px solid #884800;         
+    object-fit: cover;                  
+    box-shadow: 0 0 15px rgba(51, 27, 0, 0.5); 
+    transition: transform 0.2s ease-in-out;     
+}
+
+#pet-image:hover {
+    transform: scale(1.05);
+}
+
+/* Nome do pet */
+.pet-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #793b00;
+    margin-top: 15px;
+}
+
+/* Seção de status (barras de atributos) */
+.status-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Grupo de cada barra de status com label */
+.status-bar-group {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-bar-group label {
+    font-weight: bold;
+    color: #555;
+    min-width: 80px;
+    text-align: right; 
+}
+
+/* Container da barra de status */
+.bar-container {
+    flex-grow: 1;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #bdbdbd;
+}
+
+/* Barra de status real */
+.status-bar {
+    height: 100%;
+    width: 100%;
+    transition: width 0.5s ease-out, background-color 0.5s ease-out;
+    border-radius: 10px;
+}
+
+/* Texto dentro da barra de status */
+.status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-size: 0.85em;
+}
+
+/* Cores específicas de cada barra */
+.hunger-bar { background-color: #ff9800; }
+.happiness-bar { background-color:  #4caf50; }
+.energy-bar { background-color: #2196f3; }
+.hygiene-bar { background-color: #00bcd4; }
+
+/* Seção de ações do jogo */
+.actions-section {
+    width: 100%;
+}
+
+/* Container dos botões de ação */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Botões de ação */
+.action-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease,
+                transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.action-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.action-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal (mensagens do pet) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo dentro do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Botão de fechar mensagem no modal */
+#close-message-btn {
+    background-color: #007bff;
+    padding: 8px 20px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 1em;
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 20px;
+        width: 95%;
+        gap: 15px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    #pet-image {
+        width: 150px;
+        height: 150px;
+    }
+    .pet-name {
+        font-size: 1.5em;
+    }
+    .status-bar-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .status-bar-group label {
+        width: 100%;
+        text-align: left;
+    }
+    .bar-container {
+        width: 100%;
+    }
+    .action-button {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+}

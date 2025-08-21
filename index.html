@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu pet virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Meu Pet Virtual</h1>
+
+        <div class="name-section">
+    <input type="text" id="pet-name-input" placeholder="Digite o nome novo do pet">
+    <button id="set-name-btn" class="action-button">Confirmar Nome</button>
+       </div>
+       clique para ouvir o latido do pet
+        <div class="pet-display-area">
+            <img id="pet-image" src="./imagens/pet.jpg" alt="Seu Pet Virtual">
+            <p id="pet-name" class="pet-name">Buddy</p>
+        </div>
+        <div class="status-section">
+            <h2>Status do Pet</h2>
+            <div class="status-bar-group">
+                <label>Fome:</label>
+                <div class="bar-container">
+                    <div id="hunger-bar" class="status-bar hunger-bar"></div>
+                    <span id="hunger-text" class="status-text">100%</span>
+                </div>
+            </div>
+            <div class="status-bar-group">
+                <label>Felicidade:</label>
+                <div class="bar-container">
+                    <div id="happiness-bar"
+                    class="status-bar happiness-bar"></div>
+                    <span id="happiness-text"
+                    class="status-text">100%</span>
+                </div>
+            </div>
+            <div class="status-bar-group">
+                <label>Energia:</label>
+                <div class="bar-container">
+                    <div id="energy-bar" class="status-bar energy-bar"></div>
+                    <span id="energy-text" class="status-text">100%</span>
+                </div>
+            </div>
+            <div class="status-bar-group">
+                <label>Higiene:</label>
+                <div class="bar-container">
+            <div id="hygiene-bar" class="status-bar hygiene-bar"></div>
+            <span id="hygiene-text" class="status-text">100%</span>
+                </div>
+            </div>
+        </div>
+        <div class="actions-section">
+            <h2>Ações</h2>
+            <div class="action-buttons">
+                <button id="feed-btn" class="action-button">Alimentar</button>
+                <button id="play-btn" class="action-button">Brincar</button>
+                <button id="clean-btn" class="action-button">Limpar</button>
+                <button id="sleep-btn" class="action-button">Fazer Dormir</button>
+            </div>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn">OK</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
